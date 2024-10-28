@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JumperAI Game - Module1</title>
+    <title>JumperAI Game - Module3</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -20,7 +20,7 @@
 <body class="min-h-screen flex flex-col bg-white text-gray-800">
     <header class="bg-light-blue p-4 shadow-md">
         <nav class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-800">JumperAI Game - Module 1</h1>
+            <h1 class="text-2xl font-bold text-gray-800">JumperAI Game - Module 3</h1>
             <div>
                 <a href="https://hubworldsite.onrender.com" class="bg-white text-gray-800 px-4 py-2 rounded shadow hover:bg-gray-100 transition-colors mr-2">
                     Back to Hub
@@ -34,7 +34,7 @@
 
     <main class="flex-grow container mx-auto p-4">
         <div class="w-full overflow-hidden rounded-lg shadow-lg">
-            <iframe id="module-1-frame" src="https://module3jumper.netlify.app/" width="1024" height="820" frameborder="0" allowfullscreen class="w-full"></iframe>
+            <iframe id="module-3-frame" src="https://module3jumper.netlify.app/" width="1024" height="820" frameborder="0" allowfullscreen class="w-full"></iframe>
         </div>
         <!-- Progress Status Display -->
         <div id="progress-status" class="mt-4 p-4 rounded-lg hidden"></div>
@@ -128,7 +128,7 @@
         }
 
         function updateGameFrameSrc(token) {
-            const gameFrame = document.getElementById('module-4-frame');
+            const gameFrame = document.getElementById('module-3-frame');
             const gameUrlWithToken = `${GAME_URL}?token=${encodeURIComponent(token)}`;
             console.log('Updating game frame src with new token');
             gameFrame.src = gameUrlWithToken;
@@ -168,7 +168,7 @@
                     const verified = await verifyProgressSaved(true, event.data.score);
                     if (verified) {
                         showProgressStatus('Progress saved and verified successfully!');// Notify the game that the progress was saved
-                        const gameFrame = document.getElementById('module-4-frame');
+                        const gameFrame = document.getElementById('module-3-frame');
                         gameFrame.contentWindow.postMessage({ type: 'PROGRESS_SAVED', success: true }, event.origin);
                     } else {
                         showProgressStatus('Failed to verify progress save', true);
